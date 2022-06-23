@@ -1,1 +1,1 @@
-export * from './lib/common-layout';
+export { default as Navbar } from './lib/navbar/navbar';

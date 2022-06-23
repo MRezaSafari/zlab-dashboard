@@ -6,7 +6,11 @@ export interface DashboardProps {}
 export function HomePage(props: DashboardProps) {
   return (
     <StyledDashboard>
-      <h1>Welcome to Dashboard!</h1>
+      <div className="container">
+        <p>we</p>
+        <p>rent</p>
+        <p>the future</p>
+      </div>
     </StyledDashboard>
   );
 }

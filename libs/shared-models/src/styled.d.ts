@@ -9,6 +9,12 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       background: string;
+      title: string,
+      text: string,
+      danger: string,
+      warning: string,
+      info: string,
+      success: string
     };
   }
 }
