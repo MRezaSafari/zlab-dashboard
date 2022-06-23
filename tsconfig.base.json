@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zlab/shared-components": ["libs/shared-components/src/index.ts"]
+      "@zlab/common-layout": ["libs/common-layout/src/index.ts"],
+      "@zlab/shared-components": ["libs/shared-components/src/index.ts"],
+      "@zlab/shared-models": ["libs/shared-models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,18 +1,7 @@
-import styled from 'styled-components';
-
-import { Button } from '@zlab/shared-components';
-
-const StyledPage = styled.main`
-  .page {
-  }
-`;
+import HomePage from './home';
 
 export function Index() {
-  return (
-    <StyledPage>
-      <Button>Hello</Button>
-    </StyledPage>
-  );
+  return <HomePage />;
 }
 
 export default Index;

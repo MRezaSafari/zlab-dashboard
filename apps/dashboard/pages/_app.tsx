@@ -1,5 +1,8 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
+
+import { theme } from '@zlab/shared-models';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -7,9 +10,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>zLab Dashboard</title>
       </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider theme={theme}>
+        <main className="app">
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </>
   );
 }

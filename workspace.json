@@ -2,8 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "common-layout": "libs/common-layout",
     "dashboard": "apps/dashboard",
     "dashboard-e2e": "apps/dashboard-e2e",
-    "shared-components": "libs/shared-components"
+    "shared-components": "libs/shared-components",
+    "shared-models": "libs/shared-models"
   }
 }
