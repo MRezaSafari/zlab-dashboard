@@ -1,23 +1,12 @@
-:root {
-  --font_primary: Roboto;
-  --color_primary: #ffcf54;
-  --color_secondary: #ff7433;
-  --color_background: #1b1724;
-  --color_title: #ecd8bd;
-  --color_text: #fff;
-  --color_danger: #ee5749;
-  --color_warning: #fbc654;
-  --color_info: #6abfed;
-  --color_success: #03996e;
-}
+@import '/libs/design-system/src/lib/variables.scss';
 
 html {
   font-size: 10px;
 }
 body {
-  font-family: var(--font_primary);
-  background-color: var(--color_background);
-  color: var(--color_text);
+  font-family: $font_primary;
+  background-color: $color_background;
+  color: $color_text;
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-size: 1.6rem;

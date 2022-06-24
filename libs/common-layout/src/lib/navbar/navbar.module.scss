@@ -1,3 +1,5 @@
+@import '/libs/design-system/src/lib/variables.scss';
+
 .Navbar {
   height: 4.4rem;
   padding: 1.6rem 0;
@@ -18,6 +20,6 @@
   gap: 2.4rem;
 
   a {
-    color: var(--color_title);
+    color: $color_title
   }
 }

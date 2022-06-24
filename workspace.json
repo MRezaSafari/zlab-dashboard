@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "common-layout": "libs/common-layout",
+    "design-system": "libs/design-system",
     "machines-validator": "apps/machines-validator",
     "machines-validator-e2e": "apps/machines-validator-e2e",
     "shared-components": "libs/shared-components",
