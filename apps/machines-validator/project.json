@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/dashboard",
+  "sourceRoot": "apps/machines-validator",
   "projectType": "application",
   "targets": {
     "build": {
@@ -8,8 +8,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/dashboard",
-        "outputPath": "dist/apps/dashboard"
+        "root": "apps/machines-validator",
+        "outputPath": "dist/apps/machines-validator"
       },
       "configurations": {
         "development": {},
@@ -20,16 +20,16 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "dashboard:build",
+        "buildTarget": "machines-validator:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "dashboard:build:development",
+          "buildTarget": "machines-validator:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "dashboard:build:production",
+          "buildTarget": "machines-validator:build:production",
           "dev": false
         }
       }
@@ -37,14 +37,14 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "dashboard:build:production"
+        "buildTarget": "machines-validator:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/dashboard"],
+      "outputs": ["coverage/apps/machines-validator"],
       "options": {
-        "jestConfig": "apps/dashboard/jest.config.ts",
+        "jestConfig": "apps/machines-validator/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -52,7 +52,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/dashboard/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/machines-validator/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

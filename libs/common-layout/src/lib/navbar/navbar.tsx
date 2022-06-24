@@ -3,10 +3,7 @@ import Link from 'next/link';
 
 import { INavbar } from '@zlab/shared-models';
 
-import {
-  Container,
-  NavigationContainer,
-} from './navbar.styles';
+import styles from './navbar.module.scss';
 
 export interface NavbarProps {
   navbarItems: INavbar[];
@@ -26,13 +23,18 @@ export function Navbar(props: NavbarProps) {
   const renderNavbarItems = () => navbarItems?.map((item) => renderItem(item));
 
   return (
-    <Container>
+    <nav className={styles['Navbar']}>
       <div className="container">
-        <Image src="/logo.png" data-testid="logo-image" width={100} height={44} priority />
+        <Image
+          src="/logo.png"
+          data-testid="logo-image"
+          width={100}
+          height={44}
+        />
 
-        <NavigationContainer>{renderNavbarItems()}</NavigationContainer>
+        <ul className={styles['NavigationContainer']}>{renderNavbarItems()}</ul>
       </div>
-    </Container>
+    </nav>
   );
 }
 

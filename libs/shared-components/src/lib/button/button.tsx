@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container } from './button.styles';
+import styles from './button.module.scss';
 
 export interface ButtonProps {
   children: React.ReactNode;
 }
 
 export function Button({ children }: ButtonProps) {
-  return <Container>{children}</Container>;
+  return <button className={styles['button-container']}>{children}</button>;
 }
 
 export default Button;

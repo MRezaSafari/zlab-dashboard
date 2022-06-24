@@ -1,16 +1,17 @@
-
 enum AnchorTagTarget {
-    BLANK = '_blank',
-    SELF = '_self',
-    PARENT = '_parent',
-    TOP = '_top'
+  BLANK = '_blank',
+  SELF = '_self',
+  PARENT = '_parent',
+  TOP = '_top',
 }
 
 interface INavbar {
-    id: number,
-    title: string,
-    href: string,
-    target: AnchorTagTarget,
+  id: number;
+  title: string;
+  href: string;
+  target: AnchorTagTarget;
 }
 
-export { AnchorTagTarget, INavbar };
+export { AnchorTagTarget };
+
+export type { INavbar };

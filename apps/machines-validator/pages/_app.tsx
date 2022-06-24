@@ -1,15 +1,13 @@
+import '../styles/global.scss';
+
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from 'styled-components';
 
 import { Navbar } from '@zlab/common-layout';
 import {
   AnchorTagTarget,
   INavbar,
-  theme,
 } from '@zlab/shared-models';
-
-import { GlobalStyles } from './global.styles';
 
 interface PageProps extends AppProps {
   navbarItems: INavbar[];
@@ -18,21 +16,21 @@ interface PageProps extends AppProps {
 function CustomApp({ Component, pageProps, navbarItems }: PageProps) {
   return (
     <>
-      <Head>
+       <Head>
         <title>zLab Dashboard</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
         <main className="app">
           <Navbar navbarItems={navbarItems} />
           <Component {...pageProps} />
         </main>
-      </ThemeProvider>
     </>
   );
 }
 
+
 CustomApp.getInitialProps = () => {
+
+  //Todo: Fetch data from server
   const navbarItems: INavbar[] = [
     {
       id: 1,
