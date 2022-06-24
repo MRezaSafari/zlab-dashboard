@@ -1,9 +1,10 @@
 .Navbar {
-  height: 44px;
-  padding: 16px 0;
+  height: 4.4rem;
+  padding: 1.6rem 0;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  margin-bottom: 3rem;
 
   :global(.container) {
     display: flex;
@@ -14,7 +15,7 @@
 
 .NavigationContainer {
   display: flex;
-  gap: 24px;
+  gap: 2.4rem;
 
   a {
     color: var(--color_title);

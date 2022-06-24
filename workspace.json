@@ -3,8 +3,6 @@
   "version": 2,
   "projects": {
     "common-layout": "libs/common-layout",
-    "dashboard": "apps/dashboard",
-    "dashboard-e2e": "apps/dashboard-e2e",
     "machines-validator": "apps/machines-validator",
     "machines-validator-e2e": "apps/machines-validator-e2e",
     "shared-components": "libs/shared-components",

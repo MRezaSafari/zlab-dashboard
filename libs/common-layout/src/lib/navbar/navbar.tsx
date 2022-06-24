@@ -1,15 +1,16 @@
+import { memo } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { INavbar } from '@zlab/shared-models';
+import {
+  INavbar,
+  INavbarProps,
+} from '@zlab/shared-models';
 
 import styles from './navbar.module.scss';
 
-export interface NavbarProps {
-  navbarItems: INavbar[];
-}
-
-export function Navbar(props: NavbarProps) {
+export function Navbar(props: INavbarProps) {
   const { navbarItems } = props;
 
   const renderItem = (item: INavbar) => (
@@ -38,4 +39,8 @@ export function Navbar(props: NavbarProps) {
   );
 }
 
-export default Navbar;
+function propsAreEqual(prev: INavbarProps, next: INavbarProps) {
+  return prev.navbarItems === next.navbarItems;
+}
+
+export default memo(Navbar, propsAreEqual);

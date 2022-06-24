@@ -5,6 +5,10 @@ enum AnchorTagTarget {
   TOP = '_top',
 }
 
+interface INavbarProps {
+  navbarItems: INavbar[];
+}
+
 interface INavbar {
   id: number;
   title: string;
@@ -14,4 +18,4 @@ interface INavbar {
 
 export { AnchorTagTarget };
 
-export type { INavbar };
+export type { INavbar, INavbarProps };

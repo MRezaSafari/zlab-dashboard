@@ -1,7 +1,10 @@
 export function Index() {
   return (
     <div>
-      Hello world
+      {/* TODO: Use firebase or any other authentication system */}
+      <p>Hello Rico, Welcome to Machines validator dashboard!</p>
+
+
     </div>
   );
 }
