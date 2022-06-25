@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="container"
+    >
+      <div
+        class="selected-option-container"
+        data-testid="parent-container"
+      >
+        <p
+          class="selection-option"
+        >
+          Select option
+        </p>
+      </div>
+      <div
+        class="inner-container "
+        data-testid="dropdown-inner-container"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dropdown should match the snapshot when its open 1`] = `
+<body>
+  <div>
+    <div
+      class="container"
+    >
+      <div
+        class="selected-option-container"
+        data-testid="parent-container"
+      >
+        <p
+          class="selection-option"
+        >
+          Select option
+        </p>
+      </div>
+      <div
+        class="inner-container active"
+        data-testid="dropdown-inner-container"
+      >
+        <input
+          class="search-input"
+          placeholder="Search..."
+          type="text"
+          value=""
+        />
+        <ul
+          class="options-list"
+        >
+          <li>
+            Kassulke & Sohn
+          </li>
+          <li>
+            Bayer-Bergnaum
+          </li>
+          <li>
+            Schinner Group
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;

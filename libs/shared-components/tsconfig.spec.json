@@ -3,8 +3,12 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "testing-library__jest-dom"]
   },
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/next/typings/image.d.ts"
+  ],
   "include": [
     "jest.config.ts",
     "**/*.test.ts",

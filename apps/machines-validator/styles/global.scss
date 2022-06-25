@@ -47,6 +47,10 @@ ul {
   padding: 0;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;

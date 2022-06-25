@@ -1,3 +1,66 @@
 @import '/libs/design-system/src/lib/variables.scss';
 @import '/libs/design-system/src/lib/mixins.scss';
 
+.container {
+  position: relative;
+  background-color: $color_title;
+  width: 25rem;
+  border-radius: 0.5rem;
+  color: $color_background;
+}
+
+.inner-container {
+  position: absolute;
+  background-color: $color_title;
+  border-radius: 0.5rem;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  margin-top: 0.3rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all ease 400ms;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.selected-option-container{
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+}
+
+.selection-option {
+  letter-spacing: 0.05rem;
+  min-height: 1.9rem;
+  user-select: none;
+}
+
+.search-input {
+  width: calc(100% - 2rem);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: $color_text;
+  margin-bottom: 1.5rem;
+  margin: 1rem;
+}
+
+.options-list {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  li {
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all ease 400ms;
+
+    &:hover {
+      background-color: $color_text;
+    }
+  }
+}
