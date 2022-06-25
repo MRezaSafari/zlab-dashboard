@@ -1,0 +1,68 @@
+@import '/libs/design-system/src/lib/variables.scss';
+@import '/libs/design-system/src/lib/mixins.scss';
+
+.container {
+  margin-top: 4rem;
+  table {
+    width: 100%;
+
+    thead {
+      tr:first-of-type {
+        td:first-of-type {
+          border-top-left-radius: 10px;
+        }
+        td:last-of-type {
+          border-top-right-radius: 10px;
+        }
+      }
+      td {
+        font-weight: bold;
+        color: $color_primary;
+      }
+    }
+
+    tbody {
+      tr:last-of-type {
+        td:first-of-type {
+          border-bottom-left-radius: 10px;
+        }
+        td:last-of-type {
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+
+    td {
+      padding: 1.5rem 0;
+      text-align: center;
+      transition: all ease 400ms;
+    }
+
+    tr:nth-child(odd) td {
+      background-color: lighten($color_background, 7%);
+    }
+
+    tr:nth-child(even) td {
+      background-color: lighten($color_background, 3%);
+    }
+
+    tr:hover td {
+      background-color: $color_secondary !important;
+    }
+  }
+}
+
+.state {
+  padding: 0.4rem 1.2rem;
+  font-size: 1.3rem;
+  border-radius: 10rem;
+  display: inline-block;
+
+  &.true {
+    background-color: $color_success;
+  }
+
+  &.false {
+    background-color: $color_danger;
+  }
+}
