@@ -2,11 +2,17 @@ import {
   FormContainer,
   FormField,
 } from '@zlab/common-layout';
-import { Dropdown } from '@zlab/shared-components';
+import {
+  Button,
+  Checkbox,
+  Dropdown,
+} from '@zlab/shared-components';
 
 export function Index() {
   return (
     <div>
+      <h1>Customers Overview</h1>
+      <br />
       <FormContainer>
         <FormField title="Select Customer">
           <Dropdown
@@ -34,7 +40,18 @@ export function Index() {
             ]}
           />
         </FormField>
-       
+
+        <FormField title="Warranty">
+          <Checkbox onChange={(v) => alert(v.toString())} id='Warranty-Status' title='' />
+        </FormField>
+
+        <FormField title="Contract">
+          <Checkbox onChange={(v) => alert(v.toString())} id='Service-Contract-Status' title='' />
+        </FormField>
+
+        <FormField title="">
+          <Button type="primary">Apply filters</Button>
+        </FormField>
       </FormContainer>
     </div>
   );

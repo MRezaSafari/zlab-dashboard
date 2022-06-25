@@ -1,8 +1,18 @@
+@import '/libs/design-system/src/lib/variables.scss';
+@import '/libs/design-system/src/lib/mixins.scss';
+
 .container {
   display: flex;
   flex-direction: column;
-  gap: .8rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  > p {
+    color: $color_title;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+  }
 }
 
-.field-container{
+.field-container {
 }
