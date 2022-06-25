@@ -4,7 +4,7 @@
 .container {
   position: relative;
   background-color: $color_title;
-  width: 25rem;
+  min-width: 25rem;
   border-radius: 0.5rem;
   color: $color_background;
 }

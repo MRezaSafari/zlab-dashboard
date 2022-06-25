@@ -1,0 +1,12 @@
+@import '/libs/design-system/src/lib/mixins.scss';
+
+
+.container {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    @include mobile(){
+        flex-direction: column;
+    }
+}

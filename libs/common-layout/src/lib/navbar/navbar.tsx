@@ -24,7 +24,7 @@ export function Navbar(props: INavbarProps) {
   const renderNavbarItems = () => navbarItems?.map((item) => renderItem(item));
 
   return (
-    <nav className={styles['Navbar']}>
+    <nav className={styles['navbar']}>
       <div className="container">
         <Image
           src="/logo.png"
@@ -33,7 +33,7 @@ export function Navbar(props: INavbarProps) {
           height={44}
         />
 
-        <ul className={styles['NavigationContainer']}>{renderNavbarItems()}</ul>
+        <ul className={styles['navigation-container']}>{renderNavbarItems()}</ul>
       </div>
     </nav>
   );
