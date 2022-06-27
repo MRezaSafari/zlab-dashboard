@@ -5,6 +5,8 @@ import {
   useState,
 } from 'react';
 
+import { ChevronDown } from 'react-feather';
+
 import {
   IDropdownOption,
   IDropdownProps,
@@ -111,7 +113,10 @@ export function Dropdown(props: IDropdownProps) {
         onClick={toggleListState}
         className={styles['selected-option-container']}
       >
-        <p className={styles['selection-option']}>{selectedOption}</p>
+        <p className={styles['selection-option']}>
+          <span>{selectedOption}</span>
+          <ChevronDown width={15} height={15} />
+        </p>
       </div>
       <div
         data-testid="dropdown-inner-container"

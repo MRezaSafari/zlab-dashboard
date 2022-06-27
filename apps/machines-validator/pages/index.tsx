@@ -4,6 +4,7 @@ import {
 } from 'react';
 
 import axios from 'axios';
+import { Filter } from 'react-feather';
 
 import {
   FormContainer,
@@ -75,14 +76,18 @@ interface Props {
   customers: ICustomer[];
   assetTypesList: IDropdownOption[];
   customersList: IDropdownOption[];
+  serialNumbersList: IDropdownOption[];
 }
 
-const Index: FC<Props> = ({ customers, assetTypesList, customersList }) => {
+const Index: FC<Props> = ({ customers, assetTypesList, customersList, serialNumbersList }) => {
   const [filteredData, setFilteredData] = useState<ICustomer[]>(customers);
 
   const [filters, setFilters] = useState<IFilters>();
 
-  const handleFiltersChange = (key: keyof IFilters, newValue: string | boolean) => {
+  const handleFiltersChange = (
+    key: keyof IFilters,
+    newValue: string | boolean
+  ) => {
     const newFilters = Object.assign({}, filters);
     newFilters[key as string] = newValue;
     setFilters(newFilters);
@@ -96,13 +101,22 @@ const Index: FC<Props> = ({ customers, assetTypesList, customersList }) => {
   const handleResetFilters = () => {
     setFilters(null);
     setFilteredData(customers);
-  }
+  };
 
   return (
     <div>
       <h1>Customers Overview</h1>
       <br />
       <FormContainer>
+        <FormField title="Serial Number">
+          <Dropdown
+            initialValue={filters?.serial_number}
+            onChange={(v) => {
+              handleFiltersChange('serial_number', v);
+            }}
+            options={serialNumbersList}
+          />
+        </FormField>
         <FormField title="Select Customer">
           <Dropdown
             initialValue={filters?.customer}
@@ -144,6 +158,7 @@ const Index: FC<Props> = ({ customers, assetTypesList, customersList }) => {
 
         <FormField title="">
           <Button type="primary" onClick={handleApplyFilter}>
+            <Filter width={15} height={15} />
             Apply filters
           </Button>
         </FormField>
@@ -166,12 +181,14 @@ export async function getServerSideProps(context) {
 
   const assetTypesList = generateOptionsByKey(data, 'asset_type');
   const customersList = generateOptionsByKey(data, 'customer');
+  const serialNumbersList = generateOptionsByKey(data, 'serial_number');
 
   return {
     props: {
       customers: data,
       assetTypesList,
       customersList,
+      serialNumbersList,
     },
   };
 }

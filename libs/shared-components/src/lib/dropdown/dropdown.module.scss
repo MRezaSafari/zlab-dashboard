@@ -4,15 +4,15 @@
 .container {
   position: relative;
   background-color: $color_primary;
-  min-width: 25rem;
-  border-radius: 0.5rem;
+  min-width: 22rem;
+  border-radius: 10rem;
   color: $color_background;
 }
 
 .inner-container {
   position: absolute;
   background-color: $color_primary;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   width: 100%;
   left: 0;
   top: 100%;
@@ -36,13 +36,16 @@
   letter-spacing: 0.05rem;
   min-height: 1.9rem;
   user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .search-input {
   width: calc(100% - 2rem);
   border: none;
   padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   background-color: $color_text;
   margin-bottom: 1.5rem;
   margin: 1rem;

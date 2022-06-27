@@ -13,6 +13,7 @@ interface IFilters {
   asset_type: string;
   service_contract: boolean;
   warranty: boolean;
+  serial_number: string;
 }
 
 export type { ICustomer, IFilters };
