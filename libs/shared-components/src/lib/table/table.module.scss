@@ -3,8 +3,39 @@
 
 .container {
   margin: 4rem 0;
+
+  @include mobile(){
+    width: 100%;
+    overflow: scroll;
+  }
+
+  @include tablet(){
+    width: 100%;
+    overflow: scroll;
+  }
+
   table {
     width: 100%;
+
+    @include mobile(){
+      td{
+        min-width: 200px;
+
+        &:first-of-type{
+          min-width: 70px;
+        }
+      }
+    }
+
+    @include tablet(){
+      td{
+        min-width: 200px;
+
+        &:first-of-type{
+          min-width: 70px;
+        }
+      }
+    }
 
     thead {
       tr:first-of-type {

@@ -20,6 +20,7 @@
   visibility: hidden;
   opacity: 0;
   transition: all ease 400ms;
+  z-index: 1000;
 
   &.active {
     visibility: visible;
