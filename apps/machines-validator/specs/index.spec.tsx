@@ -6,7 +6,7 @@ import Index from '../pages/index';
 
 describe('Index', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Index customers={[]} />);
+    const { baseElement } = render(<Index customers={[]} assetTypesList={[]} customersList={[]} />);
     expect(baseElement).toBeTruthy();
   });
 });

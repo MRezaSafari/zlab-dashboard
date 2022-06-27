@@ -13,15 +13,27 @@ import {
 import styles from './dropdown.module.scss';
 
 export function Dropdown(props: IDropdownProps) {
-  const { onChange, options, minimumSearchLength = 0 } = props;
+  const { onChange, options, initialValue, minimumSearchLength = 0 } = props;
 
-  const [selectedOption, setSelectedOption] = useState<string>('Select option');
+  const INITIAL_TEXT = 'Select option';
+
+  const [selectedOption, setSelectedOption] = useState<string>(
+    initialValue ? initialValue : INITIAL_TEXT
+  );
   const [optionsList, setOptionsList] = useState<IDropdownOption[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [listOpenState, setListOpenState] = useState<boolean>(false);
 
   const SearchInputRef = useRef<HTMLInputElement | null>(null);
   const ContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (initialValue) {
+      setSelectedOption(initialValue);
+    } else {
+      setSelectedOption(INITIAL_TEXT);
+    }
+  }, [initialValue]);
 
   const handleFillingOptions = () => {
     setOptionsList(options);
@@ -43,7 +55,7 @@ export function Dropdown(props: IDropdownProps) {
     if (term.length <= minimumSearchLength) return;
 
     const filteredList = optionsList.filter(
-      (item) => (item.value.toLowerCase()).indexOf(term.toLowerCase()) > -1
+      (item) => item.value.toLowerCase().indexOf(term.toLowerCase()) > -1
     );
     setOptionsList(filteredList);
   };

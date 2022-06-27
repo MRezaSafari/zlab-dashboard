@@ -28,4 +28,13 @@
       background-color: lighten($color_secondary, 30%);
     }
   }
+
+  &.type-mute {
+    @extend .type-primary;
+    background-color: $color_title;
+
+    &:hover {
+      background-color: lighten($color_title, 30%);
+    }
+  }
 }

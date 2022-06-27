@@ -8,4 +8,11 @@ interface ICustomer {
   warranty: boolean;
 }
 
-export type { ICustomer };
+interface IFilters {
+  customer: string;
+  asset_type: string;
+  service_contract: boolean;
+  warranty: boolean;
+}
+
+export type { ICustomer, IFilters };

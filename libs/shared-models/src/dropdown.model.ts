@@ -1,4 +1,5 @@
 interface IDropdownProps {
+  initialValue?: string;
   options: IDropdownOption[];
   minimumSearchLength?: number;
   onChange: (value: string) => void;

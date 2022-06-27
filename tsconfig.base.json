@@ -19,6 +19,7 @@
       "@zlab/design-system": ["libs/design-system/src/index.ts"],
       "@zlab/shared-components": ["libs/shared-components/src/index.ts"],
       "@zlab/shared-models": ["libs/shared-models/src/index.ts"],
+      "@zlab/shared-utilities": ["libs/shared-utilities/src/index.ts"],
       "@zlab/ui": ["libs/ui/src/index.ts"]
     }
   },

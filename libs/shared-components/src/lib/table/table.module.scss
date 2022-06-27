@@ -84,3 +84,11 @@
     background-color: $color_danger;
   }
 }
+
+.empty-state{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}

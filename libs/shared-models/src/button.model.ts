@@ -1,3 +1,3 @@
-type ButtonType = 'primary' | 'secondary';
+type ButtonType = 'primary' | 'secondary' | 'mute';
 
 export type { ButtonType };

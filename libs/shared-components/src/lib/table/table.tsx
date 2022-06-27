@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import {
+  useEffect,
+  useState,
+} from 'react';
 
 import {
   ChevronDown,
@@ -16,6 +19,10 @@ export interface TableProps<T> {
 
 export const Table = <T,>({ columns, data }: TableProps<T>) => {
   const [sortedData, setSortedData] = useState<T[]>(data);
+
+  useEffect(() => {
+    setSortedData(data);
+  }, [data]);
 
   const handleSort = (key: string, order: 'ASC' | 'DESC') => {
     const newData = Object.assign([], data);
@@ -45,10 +52,18 @@ export const Table = <T,>({ columns, data }: TableProps<T>) => {
           {r.sortable && (
             <ul>
               <li>
-                <ChevronUp width={15} height={15} onClick={() => handleSort(r.valueKey, 'ASC')} />
+                <ChevronUp
+                  width={15}
+                  height={15}
+                  onClick={() => handleSort(r.valueKey, 'ASC')}
+                />
               </li>
               <li>
-                <ChevronDown width={15} height={15} onClick={() => handleSort(r.valueKey, 'DESC')} />
+                <ChevronDown
+                  width={15}
+                  height={15}
+                  onClick={() => handleSort(r.valueKey, 'DESC')}
+                />
               </li>
             </ul>
           )}
@@ -75,8 +90,11 @@ export const Table = <T,>({ columns, data }: TableProps<T>) => {
         <thead>
           <tr>{renderHeaders()}</tr>
         </thead>
-        <tbody>{renderRows()}</tbody>
+        {data.length > 0 && <tbody>{renderRows()}</tbody>}
       </table>
+      {data.length === 0 && (
+        <div className={styles['empty-state']}>No Data!</div>
+      )}
     </div>
   );
 };

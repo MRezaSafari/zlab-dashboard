@@ -27,9 +27,9 @@
   }
 }
 
-.selected-option-container{
-    padding: 1.2rem 2rem;
-    cursor: pointer;
+.selected-option-container {
+  padding: 1.2rem 2rem;
+  cursor: pointer;
 }
 
 .selection-option {
@@ -52,6 +52,8 @@
   margin: 1rem;
   display: flex;
   flex-direction: column;
+  max-height: 250px;
+  overflow: auto;
   li {
     padding: 1rem 0.5rem;
     border-radius: 0.5rem;
