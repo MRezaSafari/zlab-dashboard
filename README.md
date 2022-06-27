@@ -2,16 +2,21 @@
 
 # Z-Lab Machines Validator Dashboard
 
+## Vercel Url
+    https://zlab-safarymr.vercel.app/
+
 ## Generate a library
 
-Run `nx g @nrwl/next:lib my-lib` to generate a library.
+    Run `nx g @nrwl/next:lib my-lib` to generate a library.
 
 Libraries are shareable across libraries and applications. They can be imported from `@zlab/mylib`.
 
 ## Development server
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+    Run `nx serve my-app` for a dev server.
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+----
 ## Code scaffolding
 
 Run `nx g @nrwl/next:component my-component --project=my-app` to generate a new component.
@@ -31,7 +36,3 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
