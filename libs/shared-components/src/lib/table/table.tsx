@@ -1,42 +1,69 @@
+import { useState } from 'react';
+
+import {
+  ChevronDown,
+  ChevronUp,
+} from 'react-feather';
+
 import { ColumnTemplate } from '@zlab/shared-models';
 
 import styles from './table.module.scss';
 
-/* eslint-disable-next-line */
-export interface TableProps {
+export interface TableProps<T> {
   columns: ColumnTemplate[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any[];
+  data: T[];
 }
 
-export function Table({ columns, data }: TableProps) {
+export const Table = <T,>({ columns, data }: TableProps<T>) => {
+  const [sortedData, setSortedData] = useState<T[]>(data);
+
+  const handleSort = (key: string, order: 'ASC' | 'DESC') => {
+    const newData = Object.assign([], data);
+
+    if (order === 'ASC') newData.sort((a, b) => (a[key] > b[key] ? 1 : -1));
+    if (order === 'DESC') newData.sort((a, b) => (a[key] < b[key] ? 1 : -1));
+
+    setSortedData(newData);
+  };
 
   const renderBoolean = (state: boolean) => {
     if (state)
-      return <div className={`${styles["state"]} ${styles["true"]}`}>Active</div>
+      return (
+        <div className={`${styles['state']} ${styles['true']}`}>Active</div>
+      );
 
-    return <div className={`${styles["state"]} ${styles["false"]}`}>Not Active</div>
-  }
-
-  const renderColorize = (value: string) => {
-    return <p style={{color: '#fff'}}>{value}</p>
-  }
+    return (
+      <div className={`${styles['state']} ${styles['false']}`}>Not Active</div>
+    );
+  };
 
   const renderHeaders = () =>
     columns.map((r) => (
       <td key={r.title.toLowerCase()} width={r.width}>
-        {r.title}
+        <div className={styles['table-header-item']}>
+          <span>{r.title}</span>
+          {r.sortable && (
+            <ul>
+              <li>
+                <ChevronUp width={15} height={15} onClick={() => handleSort(r.valueKey, 'ASC')} />
+              </li>
+              <li>
+                <ChevronDown width={15} height={15} onClick={() => handleSort(r.valueKey, 'DESC')} />
+              </li>
+            </ul>
+          )}
+        </div>
       </td>
     ));
 
   const renderRows = () =>
-    [...Array(data.length).keys()].map((row) => (
+    [...Array(sortedData.length).keys()].map((row: number) => (
       <tr>
-        {columns.map((r) => (
+        {columns.map((r: ColumnTemplate) => (
           <td key={r.title.toLowerCase()} width={r.width}>
-            {r.type === 'boolean' && renderBoolean(data[row][r.valueKey] as boolean)}
-            {r.type === 'string' && data[row][r.valueKey]}
-            {r.type === 'colorize' && renderColorize(data[row][r.valueKey])}
+            {r.type === 'boolean' &&
+              renderBoolean((sortedData as [])[row][r.valueKey] as boolean)}
+            {r.type === 'string' && (sortedData as [])[row][r.valueKey]}
           </td>
         ))}
       </tr>
@@ -52,6 +79,6 @@ export function Table({ columns, data }: TableProps) {
       </table>
     </div>
   );
-}
+};
 
 export default Table;

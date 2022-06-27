@@ -11,10 +11,12 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.3.6",
+    "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
     "react-is": "18.2.0",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.3.5",

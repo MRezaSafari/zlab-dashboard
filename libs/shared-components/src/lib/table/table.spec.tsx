@@ -4,7 +4,7 @@ import Table from './table';
 
 describe('Table', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Table />);
+    const { baseElement } = render(<Table columns={[]} data={[]} />);
     expect(baseElement).toBeTruthy();
   });
 });

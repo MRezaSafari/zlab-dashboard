@@ -2,17 +2,17 @@
 @import '/libs/design-system/src/lib/mixins.scss';
 
 .container {
-  margin-top: 4rem;
+  margin: 4rem 0;
   table {
     width: 100%;
 
     thead {
       tr:first-of-type {
         td:first-of-type {
-          border-top-left-radius: 10px;
+          border-top-left-radius: 1rem;
         }
         td:last-of-type {
-          border-top-right-radius: 10px;
+          border-top-right-radius: 1rem;
         }
       }
       td {
@@ -48,6 +48,24 @@
 
     tr:hover td {
       background-color: $color_secondary !important;
+    }
+  }
+}
+
+.table-header-item {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li{
+      cursor: pointer;
     }
   }
 }
