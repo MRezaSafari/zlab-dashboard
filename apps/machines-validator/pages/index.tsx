@@ -178,14 +178,16 @@ export async function getServerSideProps(context) {
   const { data } = await axios.get<ICustomer[]>(
     'https://api.jsonbin.io/v3/b/62b9da24192a674d291c921b'
   );
+  
+  const records = data.record;
 
-  const assetTypesList = generateOptionsByKey(data, 'asset_type');
-  const customersList = generateOptionsByKey(data, 'customer');
-  const serialNumbersList = generateOptionsByKey(data, 'serial_number');
+  const assetTypesList = generateOptionsByKey(records, 'asset_type');
+  const customersList = generateOptionsByKey(records, 'customer');
+  const serialNumbersList = generateOptionsByKey(records, 'serial_number');
 
   return {
     props: {
-      customers: data?.record,
+      customers: records,
       assetTypesList,
       customersList,
       serialNumbersList,
