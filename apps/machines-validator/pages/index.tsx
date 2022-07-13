@@ -185,7 +185,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      customers: data,
+      customers: data?.record,
       assetTypesList,
       customersList,
       serialNumbersList,
