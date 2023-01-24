@@ -1,38 +1,17 @@
 
 
-# Z-Lab Machines Validator Dashboard
+## Z-Lab Machines Validator Dashboard
+dashboard for validating machines and serial numbers
 
-## Vercel Url
-    https://zlab-safarymr.vercel.app/
+eveything in UI part made from scratch by myself.
+I created this as an interview assignment for zlab but they didn't even bother to check the code and started asking stupid questions.
 
-## Generate a library
+## Techs:
 
-    Run `nx g @nrwl/next:lib my-lib` to generate a library.
+* NX Mono Repo
+* Nextjs 12
+* Jest
+* React-Testing-Library
 
-Libraries are shareable across libraries and applications. They can be imported from `@zlab/mylib`.
-
-## Development server
-
-    Run `nx serve my-app` for a dev server.
-Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-----
-## Code scaffolding
-
-Run `nx g @nrwl/next:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+## Live Demo
+https://zlab.vercel.app
