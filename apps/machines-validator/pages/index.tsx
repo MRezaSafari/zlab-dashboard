@@ -175,7 +175,7 @@ const Index: FC<Props> = ({ customers, assetTypesList, customersList, serialNumb
 };
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get<ICustomer[]>(
+  const { data } = await axios.get(
     'https://api.jsonbin.io/v3/b/62b9da24192a674d291c921b'
   );
   
