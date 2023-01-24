@@ -1,5 +1,5 @@
 interface ICustomer {
-  record: {
+
     id: number;
     guid: string;
     customer: string;
@@ -7,7 +7,7 @@ interface ICustomer {
     serial_number: string;
     service_contract: boolean;
     warranty: boolean;
-  }[]
+  
 }
 
 interface IFilters {
