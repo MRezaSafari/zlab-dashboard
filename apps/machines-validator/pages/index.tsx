@@ -179,7 +179,7 @@ export async function getServerSideProps(context) {
     'https://api.jsonbin.io/v3/b/62b9da24192a674d291c921b'
   );
   
-  const records = data.record;
+  const records = data.record as ICustomer[];
 
   const assetTypesList = generateOptionsByKey(records, 'asset_type');
   const customersList = generateOptionsByKey(records, 'customer');
