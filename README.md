@@ -17,4 +17,4 @@ I created this as an interview assignment for zlab but they didn't even bother t
 https://zlab.vercel.app
 
 ## Code sandbox ( See the code alongside the preview )
-https://codesandbox.io/p/github/MRezaSafari/zlab-dashboard/csb-wd5ep8
+https://shorturl.at/kV058
